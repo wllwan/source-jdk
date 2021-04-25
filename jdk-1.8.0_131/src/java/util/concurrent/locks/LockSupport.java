@@ -300,7 +300,7 @@ public class LockSupport {
      * the thread to park in the first place. Callers may also determine,
      * for example, the interrupt status of the thread upon return.
      */
-    public static void park() {
+    public static void park() { // 如何unpark：1.其他线程执行unpark 2.被打断interrupt 3.未知原因
         UNSAFE.park(false, 0L);
     }
 
